@@ -1,8 +1,11 @@
 package arlauskas.lukas.quayzy
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Button
 import android.widget.ListView
 import retrofit2.Call
 import retrofit2.Callback
@@ -21,6 +24,13 @@ class HighScores : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_high_scores)
         userslist = retrieveList()
+        val button = findViewById<Button>(R.id.button13)
+        button.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(p0: View?) {
+                val intent = Intent(this@HighScores, Menu::class.java)
+                startActivity(intent)
+            }
+        })
     }
     fun retrieveList() : MutableList<UserScores>
     {
