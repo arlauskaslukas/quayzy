@@ -18,6 +18,7 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var email : EditText
     lateinit var pwd : EditText
     lateinit var repeatpwd : EditText
+    lateinit var pwdmatch : TextView
 
     companion object {
         lateinit var apiInterface : ApInterface
@@ -29,6 +30,7 @@ class RegisterActivity : AppCompatActivity() {
         val Pwd : String = pwd.text.toString()
         val RepPwd : String = repeatpwd.text.toString()
         if(Pwd.equals(RepPwd)){
+            pwdmatch.text = ""
             var call: Call<User> = apiInterface.performRegistration(Email, Username, Pwd)
             call.enqueue(object : Callback<User> {
                 override fun onResponse(call: Call<User>, response: Response<User>) {
@@ -54,7 +56,7 @@ class RegisterActivity : AppCompatActivity() {
         }
         else
         {
-            //TODO: error "pwd don't match"
+            throw Exception()
         }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,19 +68,20 @@ class RegisterActivity : AppCompatActivity() {
         repeatpwd = findViewById(R.id.password2)
         var SignUpButton : Button = findViewById(R.id.register)
         apiInterface = ApiClient.getApiClient().create(ApInterface::class.java)
+        pwdmatch = findViewById(R.id.pwdmatch)
         SignUpButton.setOnClickListener(object : View.OnClickListener{
             override fun onClick(p0: View?) {
                 //register
                 try {
                     performRegistration()
+                    var intent = Intent(this@RegisterActivity, Menu::class.java)
+                    intent.putExtra("Name", username.text.toString())
+                    startActivity(intent)
                 }catch (e:Exception)
                 {
+                    pwdmatch.text = "Passwords don't match"
                     e.printStackTrace()
                 }
-                performRegistration()
-                var intent = Intent(this@RegisterActivity, Menu::class.java)
-                intent.putExtra("Name", username.text.toString())
-                startActivity(intent)
             }
         })
         login = findViewById(R.id.textView10)

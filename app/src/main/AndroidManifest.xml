@@ -20,10 +20,6 @@
             android:name=".Menu"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".Startactivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
