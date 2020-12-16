@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient_background">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:id="@+id/tr1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/button"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/button"
+                android:textColor="@color/champagne"
+                android:text="Answer 1" />
+
+            <Space
+                android:layout_width="25dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/button"
+                android:textColor="@color/champagne"
+                android:text="Answer 2" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/button3"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/button"
+                android:textColor="@color/champagne"
+                android:text="Answer 3" />
+
+            <Space
+                android:layout_width="25dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button4"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/button"
+                android:textColor="@color/champagne"
+                android:text="Answer 4" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="200dp"
+        android:text="Question"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.53999996" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:id="@+id/tr3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Progress: 1/20"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/Widget.AppCompat.TextView.SpinnerItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Score: 0"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:progress="25"
+        android:progressBackgroundTint="#ED3BD8"
+        android:progressTint="#2196F3"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout2" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/button"
+        android:text="Abort game"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.81"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        android:textColor="@color/champagne"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
