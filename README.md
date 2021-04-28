@@ -1,4 +1,5 @@
-"# Quayzy - medical questionaire app" <br/>
+# Quayzy - medical questionaire app
+
 Consists out of two parts: android app and REST API on the web to retrieve and get the questions. <br/>
 REST API is available at http://coderhymes.com/loginforquayzy/insertion.php <br/>
 App written in Kotlin and Java, backend written in plain php. <br/>
